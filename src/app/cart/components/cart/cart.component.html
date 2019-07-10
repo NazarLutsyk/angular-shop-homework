@@ -1,0 +1,14 @@
+<h3>Cart</h3>
+<hr>
+<div *ngIf="products && products.length > 0; else empty">
+  <div *ngFor="let p of products">
+    <h5>Name: {{p.name}}</h5>
+    <p>Price: {{p.price * p.count}}</p>
+    <p>Count: {{p.count}}</p>
+    <button (click)="minusProduct(p)">Minus</button>
+  </div>
+</div>
+<ng-template #empty>
+  <div>EMPTY!</div>
+</ng-template>
+<hr>

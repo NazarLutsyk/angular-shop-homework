@@ -1,0 +1,14 @@
+<div *ngIf="product">
+  <hr>
+  <h3>Name: {{product.name}}</h3>
+  <p>Price: {{product.price}}</p>
+  <p>Count: {{product.count}}</p>
+  <div [ngSwitch]="product.category">
+    <p *ngSwitchCase="categorySwitch.CLOTH">CLOTH</p>
+    <p *ngSwitchCase="categorySwitch.FOOD">FOOD</p>
+    <p *ngSwitchCase="categorySwitch.PHONE">PHONE</p>
+    <p *ngSwitchDefault>OTHER</p>
+  </div>
+  <button (click)="onBuy()">BUY!</button>
+  <hr>
+</div>
