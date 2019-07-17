@@ -1,0 +1,5 @@
+<app-product appHover
+             *ngFor="let p of products"
+             [product]="p"
+             (obBuy)="buyProduct($event)"
+></app-product>

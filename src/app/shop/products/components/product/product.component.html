@@ -1,4 +1,4 @@
-<div *ngIf="product">
+<div *ngIf="product" appHover>
   <hr>
   <h3>Name: {{product.name}}</h3>
   <p>Price: {{product.price}}</p>
@@ -9,6 +9,6 @@
     <p *ngSwitchCase="categorySwitch.PHONE">PHONE</p>
     <p *ngSwitchDefault>OTHER</p>
   </div>
-  <button (click)="onBuy()">BUY!</button>
+  <button (click)="triggerOnBuy()">BUY!</button>
   <hr>
 </div>

@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private productsService: ProductsService
+    private productService: ProductsService
   ) {
   }
 
@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
 
   minusProduct(product: Product) {
     this.cartService.removeProduct(product);
-    this.productsService.addProduct({...product});
+    this.productService.addProduct({...product});
   }
 
 }

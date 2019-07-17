@@ -5,3 +5,11 @@ There are two routes:
 On product page you can see list of products and can add them to your cart
 
 On cart page displays all products which you added from previous page, also can move in back
+
+============================
+
+Now there is a hover)
+
+Also whole application was divided in modules
+
+Made some refactoring

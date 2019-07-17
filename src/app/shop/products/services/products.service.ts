@@ -1,8 +1,9 @@
-import {Injectable} from '@angular/core';
-import {Product} from '../models/Product';
-import {Category} from '../models/Category';
-import {ProductManagerService} from '../../helpers/services/product-manager.service';
+import { Injectable } from '@angular/core';
+import { Product } from '../models/Product';
+import { Category } from '../models/Category';
+import { ProductManagerService } from '../../services/product-manager.service';
 
+// why if I set there providedIn: ShopModule I will get errors about that angular cannot provide this service?
 @Injectable({
   providedIn: 'root'
 })
