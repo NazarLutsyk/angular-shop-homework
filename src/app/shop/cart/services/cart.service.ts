@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Product } from '../../products/models/Product';
-import { ProductManagerService } from '../../services/product-manager.service';
+import {Injectable} from '@angular/core';
+import {Product} from '../../products/models/Product';
+import {ProductManagerService} from '../../services/product-manager.service';
 
 // why if I set there providedIn: ShopModule I will get errors about that angular cannot provide this service?
 @Injectable({
@@ -18,12 +18,18 @@ export class CartService {
     return this.cart;
   }
 
-  addProduct(product: Product): void {
-    this.cart = this.productManager.addProduct(this.cart, product);
+  addProduct(product: Product, withCount: boolean = false): void {
+    this.cart = this.productManager.addProduct(this.cart, product, withCount);
   }
 
-  removeProduct(product): void {
-    this.cart = this.productManager.removeProduct(this.cart, product);
+  removeProduct(product: Product, all: boolean = false): void {
+    this.cart = this.productManager.removeProduct(this.cart, product, all);
+  }
+
+  clear(): void {
+    for (const product of this.cart) {
+      this.removeProduct(product, true);
+    }
   }
 
   get totalPrice(): number {

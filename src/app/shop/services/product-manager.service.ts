@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Product } from '../products/models/Product';
+import {Injectable} from '@angular/core';
+import {Product} from '../products/models/Product';
 
 // why if I set there providedIn: ShopModule I will get errors about that angular cannot provide this service?
 @Injectable({
@@ -7,21 +7,23 @@ import { Product } from '../products/models/Product';
 })
 export class ProductManagerService {
 
-  addProduct(arr: Product[] = [], product: Product): Product[] {
+  addProduct(arr: Product[] = [], product: Product, withCount: boolean = false): Product[] {
     const productIndex = this.getProductIndex(arr, product);
     if (productIndex > -1) {
       ++arr[productIndex].count;
     } else {
-      product.count = 1;
+      if (!withCount) {
+        product.count = 1;
+      }
       arr.push(product);
     }
     return arr;
   }
 
-  removeProduct(arr: Product[] = [], product): Product[] {
+  removeProduct(arr: Product[] = [], product: Product, all: boolean = false): Product[] {
     const productIndex = this.getProductIndex(arr, product);
     if (productIndex > -1) {
-      if (arr[productIndex].count > 1) {
+      if (arr[productIndex].count > 1 && !all) {
         --arr[productIndex].count;
       } else {
         arr.splice(productIndex, 1);
