@@ -2,6 +2,9 @@ import {Injectable} from '@angular/core';
 import {Product} from '../products/models/Product';
 
 // why if I set there providedIn: ShopModule I will get errors about that angular cannot provide this service?
+// Тут будет циклическая зависимость, так как модуль ShopModule используется также для регистрации
+// компонентов, которые будут использовать этот сервис.
+// Мы рассмотрим на воркшопе как этого можно избежать.
 @Injectable({
   providedIn: 'root'
 })
