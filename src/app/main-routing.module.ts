@@ -5,19 +5,16 @@ import { ProductListComponent } from './shop/products/components/product-list/pr
 import { CartComponent } from './shop/cart/components/cart/cart.component';
 
 const routes: Routes = [
+  // Порядок объектов в массиве желательно прописывать от более специфического path
+  // к менее специфическому
   { path: '', component: ProductListComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent }
 ];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
+  imports: [CommonModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class MainRoutingModule {
-}
+// Обычно он называется AppRoutingModule
+export class MainRoutingModule {}
