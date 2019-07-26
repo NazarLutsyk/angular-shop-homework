@@ -13,3 +13,8 @@ Now there is a hover)
 Also whole application was divided in modules
 
 Made some refactoring
+
+============================
+
+added pipes for layout/components/try-pipes component
+added sorting with pipe on products page

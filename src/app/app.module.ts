@@ -6,6 +6,7 @@ import { MainRoutingModule } from './main-routing.module';
 import { ShopModule } from './shop/shop.module';
 import { AboutComponent } from './layout/components/about/about.component';
 import { HoverDirective } from './core/directives/hover.directive';
+import { TryPipesComponent } from './layout/components/try-pipes/try-pipes.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { HoverDirective } from './core/directives/hover.directive';
     AppComponent,
     AboutComponent,
     HoverDirective,
+    TryPipesComponent,
   ],
   imports: [
     BrowserModule,

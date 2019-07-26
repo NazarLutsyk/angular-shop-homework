@@ -9,6 +9,7 @@ import { Product } from '../../../products/models/Product';
 export class CartItemComponent {
 
   @Input() product: Product;
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onMinusProduct = new EventEmitter<Product>();
 
   triggerMinusProduct(product: Product) {
