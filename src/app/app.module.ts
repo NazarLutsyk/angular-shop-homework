@@ -1,25 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { MainRoutingModule } from './main-routing.module';
-import { ShopModule } from './shop/shop.module';
-import { AboutComponent } from './layout/components/about/about.component';
-import { HoverDirective } from './core/directives/hover.directive';
-import { TryPipesComponent } from './layout/components/try-pipes/try-pipes.component';
-
+import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {MaterialModule} from './modules/shared/material.module';
+import {AuthModule} from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    HoverDirective,
-    TryPipesComponent,
   ],
   imports: [
     BrowserModule,
-    MainRoutingModule,
-    ShopModule
+    MaterialModule,
+    AuthModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,34 @@
+<form #form="ngForm" class="auth-form">
+  <app-form-info *ngIf="error" type="danger">{{error}}</app-form-info>
+  <mat-form-field class="full-width">
+    <input matInput
+           ngModel
+           required
+           name="login"
+           placeholder="Login">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput
+           ngModel
+           required
+           name="password"
+           placeholder="Password"/>
+  </mat-form-field>
+
+  <button mat-stroked-button
+          class="full-width"
+          type="button"
+          color="primary"
+          [disabled]="form.invalid"
+          (click)="login(form.value)"
+          *ngIf="isLogin">Login</button>
+
+  <button mat-stroked-button
+          class="full-width"
+          type="button"
+          color="primary"
+          [disabled]="form.invalid"
+          (click)="register(form.value)"
+          *ngIf="isRegister">Register</button>
+</form>

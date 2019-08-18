@@ -1,9 +1,7 @@
-<h1 #appTitle appHover="green"></h1>
-
-<button routerLink="/">Products</button>
-<button routerLink="/cart">Cart</button>
-
+<mat-toolbar color="primary">
+  <span class="title nav" routerLink="">Shoppy</span>
+  <span class="fill-remaining-space"></span>
+  <button mat-stroked-button routerLink="auth/login">Login</button>
+  <button mat-stroked-button routerLink="auth/register">Register</button>
+</mat-toolbar>
 <router-outlet></router-outlet>
-
-<!--<app-about></app-about>-->
-<!--<app-try-pipes></app-try-pipes>-->
