@@ -1,0 +1,3 @@
+<h3 class="manage-product-title">Manage product:</h3>
+<app-form-info *ngIf="message" [type]="messageType">{{message}}</app-form-info>
+<app-admin-product-form (onSubmit)="createProduct($event)"></app-admin-product-form>

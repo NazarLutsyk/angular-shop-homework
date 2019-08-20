@@ -1,7 +1,33 @@
 <mat-toolbar color="primary">
   <span class="title nav" routerLink="">Shoppy</span>
   <span class="fill-remaining-space"></span>
-  <button mat-stroked-button routerLink="auth/login">Login</button>
-  <button mat-stroked-button routerLink="auth/register">Register</button>
+  <button mat-stroked-button
+          *ngIf="auth.principal"
+          routerLink="products">
+    Products
+  </button>
+  <button mat-stroked-button
+          *ngIf="auth.principal"
+          routerLink="cart">
+    Cart
+  </button>
+  <button mat-stroked-button routerLink="admin">
+    Admin
+  </button>
+  <button mat-stroked-button
+          *ngIf="!auth.principal"
+          routerLink="auth/login">
+    Login
+  </button>
+  <button mat-stroked-button
+          *ngIf="!auth.principal"
+          routerLink="auth/register">
+    Register
+  </button>
+  <button mat-stroked-button
+          *ngIf="auth.principal"
+          (click)="auth.logout()">
+    Logout
+  </button>
 </mat-toolbar>
 <router-outlet></router-outlet>

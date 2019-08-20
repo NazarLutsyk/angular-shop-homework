@@ -11,6 +11,7 @@ import {isNotNullOrUndefined} from 'codelyzer/util/isNotNullOrUndefined';
 })
 export class AuthService {
 
+  // todo add session to localStorage
   principal: User;
 
   constructor(

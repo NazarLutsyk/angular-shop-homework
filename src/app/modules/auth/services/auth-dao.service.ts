@@ -13,15 +13,6 @@ export class AuthDaoService {
   constructor(private storage: StorageService) {
   }
 
-  existsById(id: number): Observable<boolean> {
-    return this.getAllUsers()
-      .pipe(
-        switchMap((users) => {
-          return of(users.findIndex(u => u.id === id) > -1);
-        })
-      );
-  }
-
   existsByLogin(login: string): Observable<boolean> {
     return this.getAllUsers()
       .pipe(
@@ -43,18 +34,6 @@ export class AuthDaoService {
         this.storage.setItem(StorageFields.USERS, []);
         return [];
       }));
-  }
-
-  getLastUserId(): Observable<number> {
-    return this.getAllUsers()
-      .pipe(
-        switchMap((users) => {
-          if (!Array.isArray(users) || users.length === 0) {
-            return of(0);
-          }
-          return of(users[users.length - 1].id + 1);
-        })
-      );
   }
 
   getByCredentials(user: User): Observable<User | null> {
@@ -87,6 +66,18 @@ export class AuthDaoService {
           users.push(user);
           this.storage.setItem(StorageFields.USERS, users);
           return of(user);
+        })
+      );
+  }
+
+  private getLastUserId(): Observable<number> {
+    return this.getAllUsers()
+      .pipe(
+        switchMap((users) => {
+          if (!Array.isArray(users) || users.length === 0) {
+            return of(0);
+          }
+          return of(users[users.length - 1].id + 1);
         })
       );
   }

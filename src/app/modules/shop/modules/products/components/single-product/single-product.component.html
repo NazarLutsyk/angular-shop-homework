@@ -1,0 +1,7 @@
+<mat-card class="product-card" *ngIf="product">
+  <mat-card-header>
+    <mat-card-title>{{product.name}}</mat-card-title>
+    <mat-card-subtitle>{{product.price | currency:'USD'}}</mat-card-subtitle>
+    <mat-card-subtitle>{{product.count}} left</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>

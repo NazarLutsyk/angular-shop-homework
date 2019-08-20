@@ -1,0 +1,35 @@
+<form #form="ngForm" class="product-form">
+  <mat-form-field class="full-width">
+    <input matInput
+           ngModel
+           required
+           name="name"
+           placeholder="Name">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput
+           ngModel
+           type="number"
+           required
+           name="price"
+           placeholder="Price"/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput
+           ngModel
+           type="number"
+           required
+           name="count"
+           value="0"
+           placeholder="Count"/>
+  </mat-form-field>
+
+  <button mat-stroked-button
+          class="full-width"
+          type="button"
+          color="primary"
+          [disabled]="form.invalid"
+          (click)="processForm(form.value)">Send</button>
+</form>

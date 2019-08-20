@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {MaterialModule} from './modules/shared/material.module';
 import {AuthModule} from './modules/auth/auth.module';
+import {AdminModule} from './modules/admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {AuthModule} from './modules/auth/auth.module';
     BrowserModule,
     MaterialModule,
     AuthModule,
+    AdminModule,
     AppRoutingModule
   ],
   providers: [],

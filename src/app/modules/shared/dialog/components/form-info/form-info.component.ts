@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {AlertType} from '../../models/alert-type';
 
 @Component({
   selector: 'app-form-info',
@@ -8,6 +9,6 @@ import {Component, Input} from '@angular/core';
 export class FormInfoComponent {
 
   @Input() message: string;
-  @Input() type: 'danger' = 'danger';
+  @Input() type: AlertType = 'danger';
 
 }

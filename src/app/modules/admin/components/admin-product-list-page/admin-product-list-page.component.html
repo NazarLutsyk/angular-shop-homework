@@ -1,0 +1,7 @@
+<button class="add-button"
+        routerLink="add"
+        mat-stroked-button>Create
+</button>
+<div class="products">
+  <app-single-product *ngFor="let p of products" [product]="p"></app-single-product>
+</div>

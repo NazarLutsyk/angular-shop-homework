@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 
 export enum StorageFields {
-  USERS = 'USERS'
+  USERS = 'USERS',
+  PRODUCTS = 'PRODUCTS',
 }
 
 @Injectable({

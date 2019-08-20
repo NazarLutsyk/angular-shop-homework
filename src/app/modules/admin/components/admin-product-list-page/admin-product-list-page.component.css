@@ -1,0 +1,16 @@
+.products {
+  display: flex;
+  width: 100%;
+}
+
+.add-button {
+  width: 100%;
+  background: #6ec06b;
+  font-size: 17px;
+  color: azure;
+  font-weight: 600;
+}
+
+app-single-product{
+  min-width: 33%;
+}

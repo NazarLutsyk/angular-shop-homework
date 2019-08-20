@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+}
+
+.left-menu {
+  background: darkcyan;
+  width: 13%;
+  height: calc(100vh - 64px);
+  box-shadow: 3px 0 10px -3px #004242;
+}
+
+.menu-button {
+  color: azure;
+}
+
+mat-nav-list {
+  padding-top: 0;
+}
+
+.admin-content {
+  width: 87%;
+  margin: 10px 25px;
+  height: calc(100vh - 64px);
+}
+
+.admin-content * {
+  width: 100%;
+}
