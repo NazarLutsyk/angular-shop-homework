@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Product} from '../../../shop/models/product';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-admin-product-form',
@@ -8,10 +9,18 @@ import {Product} from '../../../shop/models/product';
 })
 export class AdminProductFormComponent {
 
+  @ViewChild('form', {static: false}) form: NgForm;
+
+  @Input() product: Product = {id: null, name: '', count: null, price: 0};
   @Output() onSubmit = new EventEmitter<Product>();
 
-  processForm(value: Product) {
-    this.onSubmit.emit(value);
+  processForm() {
+    this.onSubmit.emit(this.product);
+  }
+
+  clearForm(): void {
+    this.form.resetForm();
+    this.product = {id: null, name: '', count: null, price: null};
   }
 
 }

@@ -5,6 +5,7 @@ import {AdminPageComponent} from './components/admin-page/admin-page.component';
 import {AdminProductListPageComponent} from './components/admin-product-list-page/admin-product-list-page.component';
 import {AdminProductManageComponent} from './components/admin-product-manage/admin-product-manage.component';
 import {AdminOrderListPageComponent} from './components/admin-order-list-page/admin-order-list-page.component';
+import {ProductResolverService} from '../shop/modules/products/resolvers/product-resolver.service';
 
 const routes: Routes = [
   {
@@ -22,6 +23,9 @@ const routes: Routes = [
       },
       {
         path: 'products/edit/:productID',
+        resolve: {
+          product: ProductResolverService
+        },
         component: AdminProductManageComponent
       },
       {

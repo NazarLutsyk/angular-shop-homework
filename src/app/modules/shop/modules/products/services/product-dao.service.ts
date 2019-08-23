@@ -54,7 +54,7 @@ export class ProductDaoService {
         switchMap((products) => {
           const indexToDelete = products.findIndex(p => p.id === id);
           if (indexToDelete > -1) {
-            const deletedProduct = products.splice(indexToDelete, 1);
+            const [deletedProduct] = products.splice(indexToDelete, 1);
             this.storage.setItem(StorageFields.PRODUCTS, products);
             return of(deletedProduct);
           }

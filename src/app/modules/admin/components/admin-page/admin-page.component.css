@@ -3,9 +3,9 @@
 }
 
 .left-menu {
-  background: darkcyan;
+  background: #2d84c7;
   width: 13%;
-  height: calc(100vh - 64px);
+  height: auto;
   box-shadow: 3px 0 10px -3px #004242;
 }
 

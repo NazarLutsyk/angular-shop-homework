@@ -1,16 +1,17 @@
 .products {
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .add-button {
   width: 100%;
-  background: #6ec06b;
+  background: #4c70aa;
   font-size: 17px;
   color: azure;
   font-weight: 600;
 }
 
-app-single-product{
+app-admin-single-product{
   min-width: 33%;
 }

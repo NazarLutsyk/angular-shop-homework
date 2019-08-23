@@ -10,6 +10,7 @@ import {MaterialModule} from '../shared/material.module';
 import {ProductsModule} from '../shop/modules/products/products.module';
 import {FormsModule} from '@angular/forms';
 import {DialogModule} from '../shared/dialog/dialog.module';
+import { AdminSingleProductComponent } from './components/admin-single-product/admin-single-product.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {DialogModule} from '../shared/dialog/dialog.module';
     AdminProductListPageComponent,
     AdminProductFormComponent,
     AdminOrderListPageComponent,
-    AdminProductManageComponent
+    AdminProductManageComponent,
+    AdminSingleProductComponent
   ],
   imports: [
     CommonModule,

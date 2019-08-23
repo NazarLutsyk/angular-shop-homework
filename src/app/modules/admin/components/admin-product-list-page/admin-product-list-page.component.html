@@ -3,5 +3,9 @@
         mat-stroked-button>Create
 </button>
 <div class="products">
-  <app-single-product *ngFor="let p of products" [product]="p"></app-single-product>
+  <app-admin-single-product
+    *ngFor="let p of products"
+    (onDeleteProduct)="deleteProduct($event)"
+    [product]="p">
+  </app-admin-single-product>
 </div>
