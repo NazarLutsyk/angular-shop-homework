@@ -1,20 +1,22 @@
-There are two routes:
- - /     -> products page
- - /cart -> cart page
- 
-On product page you can see list of products and can add them to your cart
+You can register or login
 
-On cart page displays all products which you added from previous page, also can move in back
 
-============================
+If you want to login as admin just set for some
+user in localStorage role in ADMIN
 
-Now there is a hover)
 
-Also whole application was divided in modules
+Users can add products to cart and make order
+Admins can edit all products, and change order statuses
 
-Made some refactoring
+Implemented guards, and resolvers
 
-============================
 
-added pipes for layout/components/try-pipes component
-added sorting with pipe on products page
+*Problems:*
+
+I tried to implement lazy module, but have got
+some error when import to it shared module
+
+Tried implement multiple router outlet but it was 
+unsuccessful
+
+I will try to fix it later!
