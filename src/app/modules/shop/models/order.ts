@@ -1,8 +1,15 @@
+import {Product} from './product';
+
+export enum OrderStatus {
+  PENDING = 'PENDING',
+  REJECTED = 'REJECTED',
+  SUBMITTED = 'SUBMITTED'
+}
+
 export interface Order {
-  id: number;
+  id?: number;
   userId: number;
-  productId: number;
-  count: number;
+  products: Array<Product>;
   date: string;
-  price: number;
+  status: OrderStatus;
 }

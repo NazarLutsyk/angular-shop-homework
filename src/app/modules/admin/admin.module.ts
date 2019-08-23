@@ -11,6 +11,7 @@ import {ProductsModule} from '../shop/modules/products/products.module';
 import {FormsModule} from '@angular/forms';
 import {DialogModule} from '../shared/dialog/dialog.module';
 import { AdminSingleProductComponent } from './components/admin-single-product/admin-single-product.component';
+import { AdminSingleOrderComponent } from './components/admin-single-order/admin-single-order.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AdminSingleProductComponent } from './components/admin-single-product/a
     AdminProductFormComponent,
     AdminOrderListPageComponent,
     AdminProductManageComponent,
-    AdminSingleProductComponent
+    AdminSingleProductComponent,
+    AdminSingleOrderComponent
   ],
   imports: [
     CommonModule,

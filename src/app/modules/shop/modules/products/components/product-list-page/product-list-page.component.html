@@ -1,1 +1,3 @@
-<app-single-product *ngFor="let p of products" [product]="p"></app-single-product>
+<app-single-product *ngFor="let p of products"
+                    [routerLink]="'/products/' + p.id"
+                    [product]="p"></app-single-product>

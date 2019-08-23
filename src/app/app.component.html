@@ -3,25 +3,27 @@
   <span class="fill-remaining-space"></span>
   <button mat-stroked-button
           *ngIf="auth.principal"
-          routerLink="products">
+          routerLink="/products">
     Products
   </button>
   <button mat-stroked-button
           *ngIf="auth.principal"
-          routerLink="cart">
+          routerLink="/cart">
     Cart
   </button>
-  <button mat-stroked-button routerLink="admin">
+  <button mat-stroked-button
+          *ngIf="auth.principal && auth.principal.role === 'ADMIN'"
+          routerLink="/admin">
     Admin
   </button>
   <button mat-stroked-button
           *ngIf="!auth.principal"
-          routerLink="auth/login">
+          routerLink="/auth/login">
     Login
   </button>
   <button mat-stroked-button
           *ngIf="!auth.principal"
-          routerLink="auth/register">
+          routerLink="/auth/register">
     Register
   </button>
   <button mat-stroked-button
@@ -31,3 +33,4 @@
   </button>
 </mat-toolbar>
 <router-outlet></router-outlet>
+<!--todo second router outlet-->

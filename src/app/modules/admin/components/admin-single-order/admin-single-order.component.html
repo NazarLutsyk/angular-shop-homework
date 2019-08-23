@@ -1,0 +1,31 @@
+<mat-card class="order-card" *ngIf="order">
+  <mat-card-header>
+    <mat-card-title>
+      {{user.login}} {{order.status}} {{order.date | date}}
+    </mat-card-title>
+    <mat-card-subtitle *ngFor="let p of order.products">{{p.count}} <strong>{{p.name}}</strong></mat-card-subtitle>
+  </mat-card-header>
+  <div class="order-manage-buttons-manage-buttons">
+    <button mat-stroked-button
+            (click)="changeOrderStatus(orderStatuses.SUBMITTED)"
+            color="primary">
+      SUBMIT
+    </button>
+    <button mat-stroked-button
+            (click)="changeOrderStatus(orderStatuses.REJECTED)"
+            color="warn">
+      REJECT
+    </button>
+    <button mat-stroked-button
+            (click)="changeOrderStatus(orderStatuses.PENDING)"
+            color="accent">
+      PEND
+    </button>
+    <button mat-stroked-button
+            (click)="deleteOrder(order.id)"
+            color="warn">
+      DELETE
+    </button>
+  </div>
+</mat-card>
+

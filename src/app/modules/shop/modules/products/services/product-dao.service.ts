@@ -14,9 +14,9 @@ export class ProductDaoService {
 
   getAllProducts(): Observable<Array<Product>> {
     return this.storage.getItem<Array<Product>>(StorageFields.PRODUCTS)
-      .pipe(switchMap((users) => {
-        if (Array.isArray(users)) {
-          return of(users);
+      .pipe(switchMap((products) => {
+        if (Array.isArray(products)) {
+          return of(products);
         }
         this.storage.setItem(StorageFields.PRODUCTS, []);
         return [];

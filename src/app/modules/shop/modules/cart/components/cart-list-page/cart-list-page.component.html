@@ -1,0 +1,6 @@
+<button mat-stroked-button (click)="createOrder()">BUY</button>
+<app-cart-product-info *ngFor="let p of products"
+                       (onDeleteProduct)="deleteProductFromCart($event)"
+                       (onMinusProduct)="minusProductFromCart($event)"
+                       [product]="p">
+</app-cart-product-info>

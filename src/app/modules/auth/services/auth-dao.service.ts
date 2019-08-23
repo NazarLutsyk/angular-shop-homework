@@ -36,6 +36,15 @@ export class AuthDaoService {
       }));
   }
 
+  getUserById(id: number): Observable<User> {
+    return this.getAllUsers().pipe(
+      switchMap((users) => {
+        return of(users.find(u => u.id === id));
+      })
+    );
+  }
+
+
   getByCredentials(user: User): Observable<User | null> {
     return this.getAllUsers()
       .pipe(

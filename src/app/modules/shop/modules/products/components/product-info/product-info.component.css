@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+app-single-product {
+  width: 45%;
+}
+
+mat-card{
+  width: 40%;
+}
+
+mat-form-field, [mat-input]{
+  width: 84%;
+}
+
+button{
+  width: 10%;
+  margin-left: 2%;
+}

@@ -1,1 +1,18 @@
-<p>product-info works!</p>
+<app-form-info *ngIf="message" type="ok">{{message}}</app-form-info>
+<app-single-product [product]="product"></app-single-product>
+<mat-card>
+  <mat-card-subtitle>
+    <mat-form-field>
+      <input type="number"
+             matInput
+             ngModel
+             name="count"
+             #count="ngModel"
+             placeholder="Count"
+             required>
+    </mat-form-field>
+    <button mat-stroked-button
+            [disabled]="count.invalid || count.value > product.count || count.value <= 0"
+            (click)="addToCart(product, count.value)">Add</button>
+  </mat-card-subtitle>
+</mat-card>

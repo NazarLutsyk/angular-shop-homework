@@ -4,6 +4,9 @@ import {ProductListPageComponent} from './components/product-list-page/product-l
 import {SingleProductComponent} from './components/single-product/single-product.component';
 import {ProductInfoComponent} from './components/product-info/product-info.component';
 import {MaterialModule} from '../../../shared/material.module';
+import {ProductsRoutingModule} from './products-routing.module';
+import {FormsModule} from '@angular/forms';
+import {DialogModule} from '../../../shared/dialog/dialog.module';
 
 @NgModule({
   declarations: [
@@ -11,13 +14,16 @@ import {MaterialModule} from '../../../shared/material.module';
     SingleProductComponent,
     ProductInfoComponent,
   ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    DialogModule,
+    MaterialModule,
+    ProductsRoutingModule,
+  ],
   exports: [
     SingleProductComponent
   ],
-  imports: [
-    CommonModule,
-    MaterialModule
-  ]
 })
 export class ProductsModule {
 }

@@ -4,6 +4,9 @@ import {Observable, of} from 'rxjs';
 export enum StorageFields {
   USERS = 'USERS',
   PRODUCTS = 'PRODUCTS',
+  PRINCIPAL = 'PRINCIPAL',
+  CART = 'CART',
+  ORDERS = 'ORDERS',
 }
 
 @Injectable({

@@ -6,12 +6,16 @@ import {AdminProductListPageComponent} from './components/admin-product-list-pag
 import {AdminProductManageComponent} from './components/admin-product-manage/admin-product-manage.component';
 import {AdminOrderListPageComponent} from './components/admin-order-list-page/admin-order-list-page.component';
 import {ProductResolverService} from '../shop/modules/products/resolvers/product-resolver.service';
+import {RoleGuard} from '../auth/guards/role.guard';
+import {AuthenticatedGuard} from '../auth/guards/authenticated.guard';
+import {Roles} from '../auth/models/roles';
 
 const routes: Routes = [
   {
     path: 'admin',
     component: AdminPageComponent,
-    // canActivate: [AuthenticatedGuard, RoleGuard]
+    canActivate: [AuthenticatedGuard, RoleGuard],
+    data: {expectedRoles: [Roles.ADMIN]},
     children: [
       {
         path: 'products',

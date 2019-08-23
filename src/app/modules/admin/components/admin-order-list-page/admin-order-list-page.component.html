@@ -1,1 +1,5 @@
-<p>admin-order-list-page works!</p>
+<app-admin-single-order *ngFor="let o of orders"
+                        [order]="o"
+                        (onDeleteOrder)="deleteOrder($event)"
+                        (onChangeOrderStatus)="changeOrderStatus($event)">
+</app-admin-single-order>

@@ -1,0 +1,17 @@
+<mat-card class="product-card" *ngIf="product">
+  <mat-card-header>
+    <mat-card-title>{{product.name}}</mat-card-title>
+    <mat-card-subtitle>{{product.price | currency:'USD'}}</mat-card-subtitle>
+    <mat-card-subtitle>{{product.count}} left</mat-card-subtitle>
+  </mat-card-header>
+  <div class="product-manage-buttons">
+    <button mat-stroked-button
+            (click)="minusProduct(product.id)"
+            color="primary">Minus
+    </button>
+    <button mat-stroked-button
+            (click)="deleteProduct(product.id)"
+            color="warn">Delete
+    </button>
+  </div>
+</mat-card>
