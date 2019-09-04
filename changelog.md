@@ -20,3 +20,9 @@ Tried implement multiple router outlet but it was
 unsuccessful
 
 I will try to fix it later!
+
+added json placeholder service, 
+response time logging interceptor, 
+config service
+
+just run app and open console
