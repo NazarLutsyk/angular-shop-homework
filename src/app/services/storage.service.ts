@@ -7,6 +7,7 @@ export enum StorageFields {
   PRINCIPAL = 'PRINCIPAL',
   CART = 'CART',
   ORDERS = 'ORDERS',
+  CONFIG = 'CONFIG',
 }
 
 @Injectable({

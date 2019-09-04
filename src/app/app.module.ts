@@ -7,7 +7,8 @@ import {MaterialModule} from './modules/shared/material.module';
 import {AuthModule} from './modules/auth/auth.module';
 import {AdminModule} from './modules/admin/admin.module';
 import {ShopModule} from './modules/shop/shop.module';
-import {ReactiveFormsModule} from '@angular/forms';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {ResponseTimeService} from './interceptors/response-time.service';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,16 @@ import {ReactiveFormsModule} from '@angular/forms';
     ShopModule,
     AuthModule,
     AdminModule,
-    ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ResponseTimeService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
