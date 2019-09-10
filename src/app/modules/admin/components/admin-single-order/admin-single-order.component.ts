@@ -23,6 +23,8 @@ export class AdminSingleOrderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Наличие подписки заставляет в этом и в других местах вникать в вопрос как от нее отписались
+    // есть ли async pipe или unsibscribe, takeUntil и т. д.
     this.usersDao.getUserById(this.order.userId).subscribe(u => this.user = u);
   }
 
