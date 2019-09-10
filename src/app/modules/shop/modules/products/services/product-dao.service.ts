@@ -33,6 +33,7 @@ export class ProductDaoService {
   createProduct(product: Product): Observable<Product> {
     return this.getLastProductId()
       .pipe(
+        // тут думаю, можно воспользоваться tap()
         switchMap((id) => {
           product.id = id;
           return of(product);
